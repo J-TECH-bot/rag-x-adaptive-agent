@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is Retrieval-Augmented Generation?",
+    "relevant_chunks": [1, 8]
+  },
+  {
+    "question": "What are the two components of a Retrieval-Augmented Generation model?",
+    "relevant_chunks": [8, 9]
+  },
+  {
+    "question": "What is the difference between parametric and non-parametric memory?",
+    "relevant_chunks": [1, 2]
+  },
+  {
+    "question": "What datasets are used to evaluate the RAG models?",
+    "relevant_chunks": [18, 19]
+  },
+  {
+    "question": "What is the benefit of replacing the retrieval index?",
+    "relevant_chunks": [43, 44]
+  },
+  {
+    "question": "What is the role of the retriever in RAG?",
+    "relevant_chunks": [8, 9, 11]
+  },
+  {
+    "question": "How does RAG improve knowledge-intensive NLP tasks?",
+    "relevant_chunks": [1, 2, 8]
+  },
+  {
+    "question": "What is the advantage of non-parametric memory?",
+    "relevant_chunks": [1, 2, 43, 44]
+  },
+  {
+    "question": "What is the FEVER task used for in the experiments?",
+    "relevant_chunks": [8]
+  },
+  {
+    "question": "What future work is suggested for RAG?",
+    "relevant_chunks": [43, 44]
+  }
+]
