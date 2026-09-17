@@ -1,42 +1,82 @@
 [
-  {
-    "question": "What is Retrieval-Augmented Generation?",
-    "relevant_chunks": [1, 8]
-  },
-  {
-    "question": "What are the two components of a Retrieval-Augmented Generation model?",
-    "relevant_chunks": [8, 9]
-  },
-  {
-    "question": "What is the difference between parametric and non-parametric memory?",
-    "relevant_chunks": [1, 2]
-  },
-  {
-    "question": "What datasets are used to evaluate the RAG models?",
-    "relevant_chunks": [18, 19]
-  },
-  {
-    "question": "What is the benefit of replacing the retrieval index?",
-    "relevant_chunks": [43, 44]
-  },
-  {
-    "question": "What is the role of the retriever in RAG?",
-    "relevant_chunks": [8, 9, 11]
-  },
-  {
-    "question": "How does RAG improve knowledge-intensive NLP tasks?",
-    "relevant_chunks": [1, 2, 8]
-  },
-  {
-    "question": "What is the advantage of non-parametric memory?",
-    "relevant_chunks": [1, 2, 43, 44]
-  },
-  {
-    "question": "What is the FEVER task used for in the experiments?",
-    "relevant_chunks": [8]
-  },
-  {
-    "question": "What future work is suggested for RAG?",
-    "relevant_chunks": [43, 44]
-  }
+{
+"id": 1,
+"question": "What is Retrieval-Augmented Generation?",
+"answerability": "answerable",
+"difficulty_type": "easy",
+"relevant_chunks": [1, 8],
+"reference_answer": "Retrieval-Augmented Generation (RAG) is a framework that combines a pre-trained parametric language model with a non-parametric memory, such as a dense vector index, and retrieves relevant documents to help generate responses."
+},
+{
+"id": 2,
+"question": "What are the two components of a Retrieval-Augmented Generation model?",
+"answerability": "answerable",
+"difficulty_type": "easy",
+"relevant_chunks": [8, 9],
+"reference_answer": "A RAG model consists of two main components: a retriever that retrieves relevant documents and a generator that produces the final language output."
+},
+{
+"id": 3,
+"question": "What is the difference between parametric and non-parametric memory?",
+"answerability": "answerable",
+"difficulty_type": "easy",
+"relevant_chunks": [1, 2],
+"reference_answer": "Parametric memory is stored in the parameters of the pre-trained language model, while non-parametric memory is stored externally, such as in a dense vector index containing documents."
+},
+{
+"id": 4,
+"question": "What datasets are used to evaluate the RAG models?",
+"answerability": "answerable",
+"difficulty_type": "easy",
+"relevant_chunks": [18, 19],
+"reference_answer": "The RAG models are evaluated on open-domain question answering datasets including Natural Questions, TriviaQA, WebQuestions, CuratedTrec and other evaluation datasets described in the paper."
+},
+{
+"id": 5,
+"question": "What is the benefit of replacing the retrieval index?",
+"answerability": "answerable",
+"difficulty_type": "depth_sensitive",
+"relevant_chunks": [43, 44],
+"reference_answer": "Replacing the retrieval index allows the model's non-parametric memory to be updated without retraining the entire model, allowing its knowledge to change as new information becomes available."
+},
+{
+"id": 6,
+"question": "What is the role of the retriever in RAG?",
+"answerability": "answerable",
+"difficulty_type": "easy",
+"relevant_chunks": [8, 9, 11],
+"reference_answer": "The retriever identifies and retrieves relevant documents from the non-parametric memory based on the input query. These retrieved documents are then used by the generator."
+},
+{
+"id": 7,
+"question": "How does RAG improve knowledge-intensive NLP tasks?",
+"answerability": "answerable",
+"difficulty_type": "medium",
+"relevant_chunks": [1, 2, 8],
+"reference_answer": "RAG improves knowledge-intensive NLP tasks by combining a pre-trained language generator with retrieved external knowledge, helping produce more specific, diverse and factual language."
+},
+{
+"id": 8,
+"question": "What is the advantage of non-parametric memory?",
+"answerability": "answerable",
+"difficulty_type": "medium",
+"relevant_chunks": [1, 2, 43, 44],
+"reference_answer": "Non-parametric memory can store external knowledge separately from the model parameters and can be updated by changing the retrieval index without retraining the entire language model."
+},
+{
+"id": 9,
+"question": "What is the FEVER task used for in the experiments?",
+"answerability": "answerable",
+"difficulty_type": "depth_sensitive",
+"relevant_chunks": [8],
+"reference_answer": "FEVER is used as a fact verification task to evaluate the ability of RAG models to retrieve and use evidence for verifying claims."
+},
+{
+"id": 10,
+"question": "What future work is suggested for RAG?",
+"answerability": "answerable",
+"difficulty_type": "ranking_challenging",
+"relevant_chunks": [43, 44],
+"reference_answer": "The paper suggests future work around improving RAG techniques, including better use and aggregation of retrieved evidence and further exploration of retrieval-augmented generation."
+}
 ]

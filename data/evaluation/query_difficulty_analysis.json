@@ -1,0 +1,848 @@
+{
+  "configuration": {
+    "pdf_path": "data/raw/rag_original.pdf",
+    "questions_path": "data/evaluation/retrieval_questions.json",
+    "depths": [
+      10,
+      20,
+      50
+    ],
+    "total_chunks": 77,
+    "total_questions": 10
+  },
+  "questions": [
+    {
+      "question_id": 1,
+      "question": "What is Retrieval-Augmented Generation?",
+      "relevant_chunks": [
+        1,
+        8
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.002819836139678955
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.6032358381466327
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0014888337468982604
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.002819836139678955
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.6032358381466327
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0014888337468982604
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.002819836139678955
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.6032358381466327
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0014888337468982604
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 2,
+      "question": "What are the two components of a Retrieval-Augmented Generation model?",
+      "relevant_chunks": [
+        8,
+        9
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.005139350891113281
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.1199930986725608
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0005124262379021804
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 4
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.005139350891113281
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.1199930986725608
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 12,
+            "score_gap": 0.0005124262379021804
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 5
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.005139350891113281
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.1199930986725608
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.0005124262379021804
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 6
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 3,
+      "question": "What is the difference between parametric and non-parametric memory?",
+      "relevant_chunks": [
+        1,
+        2
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.02902376651763916
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.24983133643825006
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007378952133711564
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.02902376651763916
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.24983133643825006
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007378952133711564
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.02902376651763916
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.24983133643825006
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007378952133711564
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 4,
+      "question": "What datasets are used to evaluate the RAG models?",
+      "relevant_chunks": [
+        18,
+        19
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.027892202138900757
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.7756318180360253
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.013517271662763463
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.027892202138900757
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.7756318180360253
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0002681685141362536
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.027892202138900757
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.7756318180360253
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0002681685141362536
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 5,
+      "question": "What is the benefit of replacing the retrieval index?",
+      "relevant_chunks": [
+        43,
+        44
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.004266977310180664
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.2220245385208397
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.004266977310180664
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 18,
+            "score_gap": 1.2220245385208397
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 43,
+            "score_gap": 0.004266977310180664
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 18,
+            "score_gap": 1.2220245385208397
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 25,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 8
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 6,
+      "question": "What is the role of the retriever in RAG?",
+      "relevant_chunks": [
+        8,
+        9,
+        11
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.024547338485717773
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 1.7624372644553876
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0006916263536388689
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.024547338485717773
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 1.7624372644553876
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0006916263536388689
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 5
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.024547338485717773
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 1.7624372644553876
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0006916263536388689
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 5
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 7,
+      "question": "How does RAG improve knowledge-intensive NLP tasks?",
+      "relevant_chunks": [
+        1,
+        2,
+        8
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0009750127792358398
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 1.0390671630840451
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0005040322580645157
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0009750127792358398
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 1.0390671630840451
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0005040322580645157
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0009750127792358398
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 1.0390671630840451
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0005040322580645157
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 8,
+      "question": "What is the advantage of non-parametric memory?",
+      "relevant_chunks": [
+        1,
+        2,
+        43,
+        44
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.00772470235824585
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.4151007570380667
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0002473428312980558
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.00772470235824585
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.4151007570380667
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0002473428312980558
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.00772470235824585
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.4151007570380667
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0002473428312980558
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 9,
+      "question": "What is the FEVER task used for in the experiments?",
+      "relevant_chunks": [
+        8
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.03770112991333008
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.8183874966958324
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0022124863620715945
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.03770112991333008
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 18,
+            "score_gap": 0.8183874966958324
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0022124863620715945
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 33,
+            "score_gap": 0.03770112991333008
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 18,
+            "score_gap": 0.8183874966958324
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 21,
+            "score_gap": 0.0022124863620715945
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      }
+    },
+    {
+      "question_id": 10,
+      "question": "What future work is suggested for RAG?",
+      "relevant_chunks": [
+        43,
+        44
+      ],
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.06216278672218323
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9280927459533732
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.013517271662763463
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.06216278672218323
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9280927459533732
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 4.680862955511178e-05
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 22,
+            "score_gap": 0.06216278672218323
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9280927459533732
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 4.680862955511178e-05
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "unreachable_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      }
+    }
+  ]
+}
