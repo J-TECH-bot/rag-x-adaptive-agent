@@ -1,82 +1,490 @@
+
 [
-{
-"id": 1,
-"question": "What is Retrieval-Augmented Generation?",
-"answerability": "answerable",
-"difficulty_type": "easy",
-"relevant_chunks": [1, 8],
-"reference_answer": "Retrieval-Augmented Generation (RAG) is a framework that combines a pre-trained parametric language model with a non-parametric memory, such as a dense vector index, and retrieves relevant documents to help generate responses."
-},
-{
-"id": 2,
-"question": "What are the two components of a Retrieval-Augmented Generation model?",
-"answerability": "answerable",
-"difficulty_type": "easy",
-"relevant_chunks": [8, 9],
-"reference_answer": "A RAG model consists of two main components: a retriever that retrieves relevant documents and a generator that produces the final language output."
-},
-{
-"id": 3,
-"question": "What is the difference between parametric and non-parametric memory?",
-"answerability": "answerable",
-"difficulty_type": "easy",
-"relevant_chunks": [1, 2],
-"reference_answer": "Parametric memory is stored in the parameters of the pre-trained language model, while non-parametric memory is stored externally, such as in a dense vector index containing documents."
-},
-{
-"id": 4,
-"question": "What datasets are used to evaluate the RAG models?",
-"answerability": "answerable",
-"difficulty_type": "easy",
-"relevant_chunks": [18, 19],
-"reference_answer": "The RAG models are evaluated on open-domain question answering datasets including Natural Questions, TriviaQA, WebQuestions, CuratedTrec and other evaluation datasets described in the paper."
-},
-{
-"id": 5,
-"question": "What is the benefit of replacing the retrieval index?",
-"answerability": "answerable",
-"difficulty_type": "depth_sensitive",
-"relevant_chunks": [43, 44],
-"reference_answer": "Replacing the retrieval index allows the model's non-parametric memory to be updated without retraining the entire model, allowing its knowledge to change as new information becomes available."
-},
-{
-"id": 6,
-"question": "What is the role of the retriever in RAG?",
-"answerability": "answerable",
-"difficulty_type": "easy",
-"relevant_chunks": [8, 9, 11],
-"reference_answer": "The retriever identifies and retrieves relevant documents from the non-parametric memory based on the input query. These retrieved documents are then used by the generator."
-},
-{
-"id": 7,
-"question": "How does RAG improve knowledge-intensive NLP tasks?",
-"answerability": "answerable",
-"difficulty_type": "medium",
-"relevant_chunks": [1, 2, 8],
-"reference_answer": "RAG improves knowledge-intensive NLP tasks by combining a pre-trained language generator with retrieved external knowledge, helping produce more specific, diverse and factual language."
-},
-{
-"id": 8,
-"question": "What is the advantage of non-parametric memory?",
-"answerability": "answerable",
-"difficulty_type": "medium",
-"relevant_chunks": [1, 2, 43, 44],
-"reference_answer": "Non-parametric memory can store external knowledge separately from the model parameters and can be updated by changing the retrieval index without retraining the entire language model."
-},
-{
-"id": 9,
-"question": "What is the FEVER task used for in the experiments?",
-"answerability": "answerable",
-"difficulty_type": "depth_sensitive",
-"relevant_chunks": [8],
-"reference_answer": "FEVER is used as a fact verification task to evaluate the ability of RAG models to retrieve and use evidence for verifying claims."
-},
-{
-"id": 10,
-"question": "What future work is suggested for RAG?",
-"answerability": "answerable",
-"difficulty_type": "ranking_challenging",
-"relevant_chunks": [43, 44],
-"reference_answer": "The paper suggests future work around improving RAG techniques, including better use and aggregation of retrieved evidence and further exploration of retrieval-augmented generation."
-}
+  {
+    "id": 1,
+    "question": "What is Retrieval-Augmented Generation?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [1, 2, 7],
+    "reference_answer": "Retrieval-Augmented Generation combines a pretrained parametric model with a non-parametric external memory that can be accessed through retrieval."
+  },
+  {
+    "id": 2,
+    "question": "What are the two components of a Retrieval-Augmented Generation model?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [9, 10],
+    "reference_answer": "The two main components are a retriever, which retrieves relevant documents, and a generator, which generates text conditioned on the input and retrieved documents."
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between parametric and non-parametric memory?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [1, 3, 7],
+    "reference_answer": "Parametric memory is stored in the parameters of a pretrained model, while non-parametric memory is stored externally in a retrievable document index."
+  },
+  {
+    "id": 4,
+    "question": "What datasets are used to evaluate the RAG models?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [17, 18, 19],
+    "reference_answer": "The experiments evaluate RAG on several knowledge-intensive tasks including Natural Questions, TriviaQA, WebQuestions, CuratedTrec, MSMARCO, Jeopardy question generation, and FEVER."
+  },
+  {
+    "id": 5,
+    "question": "What is the benefit of replacing the retrieval index?",
+    "answerability": "answerable",
+    "difficulty_type": "depth_sensitive",
+    "relevant_chunks": [36, 38],
+    "reference_answer": "Replacing the retrieval index allows the external knowledge of RAG to be updated without retraining the generator."
+  },
+  {
+    "id": 6,
+    "question": "What is the role of the retriever in RAG?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [9, 11, 13],
+    "reference_answer": "The retriever selects relevant documents from the external non-parametric memory based on the input query."
+  },
+  {
+    "id": 7,
+    "question": "How does RAG improve knowledge-intensive NLP tasks?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [1, 2, 7],
+    "reference_answer": "RAG improves knowledge-intensive NLP by combining a pretrained generator with retrieved external knowledge, allowing the model to access information beyond its parametric memory."
+  },
+  {
+    "id": 8,
+    "question": "What is the advantage of non-parametric memory?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [3, 7, 36, 38],
+    "reference_answer": "Non-parametric memory can be updated or replaced independently of the model parameters, making it easier to update the model's external knowledge."
+  },
+  {
+    "id": 9,
+    "question": "What is the FEVER task used for in the experiments?",
+    "answerability": "answerable",
+    "difficulty_type": "depth_sensitive",
+    "relevant_chunks": [23, 24],
+    "reference_answer": "FEVER is a fact verification task where the system retrieves evidence from Wikipedia and reasons over that evidence to determine whether a claim is supported, refuted, or lacks sufficient information."
+  },
+  {
+    "id": 10,
+    "question": "What future work is suggested for RAG?",
+    "answerability": "answerable",
+    "difficulty_type": "ranking_challenging",
+    "relevant_chunks": [44, 45],
+    "reference_answer": "The paper suggests further work on retrieving and aggregating evidence from multiple pieces of retrieved content and exploring RAG techniques across additional settings."
+  },
+  {
+    "id": 11,
+    "question": "How does RAG-Sequence differ from RAG-Token?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [10, 11, 12],
+    "reference_answer": "RAG-Sequence uses the same retrieved document for the entire generated sequence, whereas RAG-Token can use different retrieved documents for different generated tokens."
+  },
+  {
+    "id": 12,
+    "question": "What type of index is used as the non-parametric memory in RAG?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [1, 13, 17],
+    "reference_answer": "RAG uses a dense vector index containing documents as its non-parametric memory."
+  },
+  {
+    "id": 13,
+    "question": "Why can the retrieval index be updated without retraining the generator?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [36, 38],
+    "reference_answer": "The retrieval index is an external non-parametric memory, so its contents can be replaced or updated without changing the generator parameters."
+  },
+  {
+    "id": 14,
+    "question": "What does the retriever return to the generator?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [9, 11],
+    "reference_answer": "The retriever returns the top-K retrieved documents that are then used by the generator."
+  },
+  {
+    "id": 15,
+    "question": "Why is external knowledge useful for knowledge-intensive tasks?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [1, 3, 7],
+    "reference_answer": "External knowledge gives the model access to information that may not be stored in its parameters and allows the model's knowledge source to be updated."
+  },
+  {
+    "id": 16,
+    "question": "What is the accuracy of RAG on the MNIST dataset?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not report RAG accuracy on the MNIST dataset."
+  },
+  {
+    "id": 17,
+    "question": "What GPU model was used to train the RAG models?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not provide enough information to establish the GPU model used for training."
+  },
+  {
+    "id": 18,
+    "question": "What is the stock price of NVIDIA mentioned in the RAG paper?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The RAG paper does not contain NVIDIA stock price information."
+  },
+  {
+    "id": 19,
+    "question": "Who is the CEO of OpenAI according to the RAG paper?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The RAG paper does not provide information about the CEO of OpenAI."
+  },
+  {
+    "id": 20,
+    "question": "What is the weather in Mumbai on the day the RAG paper was published?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The RAG paper does not contain weather information for Mumbai."
+  },
+
+  {
+    "id": 21,
+    "question": "What problem does RAG address in knowledge-intensive NLP?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [1, 3],
+    "reference_answer": "RAG addresses the limitations of relying only on knowledge stored in model parameters by allowing the model to retrieve information from an external memory."
+  },
+  {
+    "id": 22,
+    "question": "What are the two forms of memory used by RAG?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [1, 7],
+    "reference_answer": "RAG combines parametric memory stored in a pretrained model with non-parametric memory stored in an external document index."
+  },
+  {
+    "id": 23,
+    "question": "What model is used as the generator in the RAG experiments?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [14],
+    "reference_answer": "The RAG experiments use BART as the sequence-to-sequence generator."
+  },
+  {
+    "id": 24,
+    "question": "What retrieval system is used to search the document index?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [13],
+    "reference_answer": "The paper uses Maximum Inner Product Search (MIPS) to retrieve documents from the document index."
+  },
+  {
+    "id": 25,
+    "question": "What corpus is used as the main source of external knowledge?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [17],
+    "reference_answer": "The experiments use a Wikipedia dump as the main source of external knowledge."
+  },
+  {
+    "id": 26,
+    "question": "What happens to the document encoder and index during training?",
+    "answerability": "answerable",
+    "difficulty_type": "easy",
+    "relevant_chunks": [15],
+    "reference_answer": "The document encoder and document index are kept fixed during training."
+  },
+
+  {
+    "id": 27,
+    "question": "How does RAG-Sequence use retrieved documents during generation?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [10, 11],
+    "reference_answer": "RAG-Sequence considers retrieved documents for generating the entire output sequence and uses the same retrieved document throughout that sequence."
+  },
+  {
+    "id": 28,
+    "question": "How does RAG-Token use retrieved documents differently from RAG-Sequence?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [11, 12],
+    "reference_answer": "RAG-Token can condition different generated tokens on different retrieved documents, while RAG-Sequence uses one document for the complete sequence."
+  },
+  {
+    "id": 29,
+    "question": "How are retrieval and generation combined in the RAG architecture?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [6, 9, 10],
+    "reference_answer": "The retriever selects relevant documents and the sequence-to-sequence generator conditions its output on the input together with the retrieved documents."
+  },
+  {
+    "id": 30,
+    "question": "Why is a non-parametric memory easier to update than parametric memory?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [3, 7, 36],
+    "reference_answer": "The non-parametric memory is external to the model parameters, so its documents or index can be changed without retraining the model."
+  },
+  {
+    "id": 31,
+    "question": "How does replacing the retrieval index affect the external knowledge available to RAG?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [36, 38, 39],
+    "reference_answer": "Replacing the retrieval index changes the external knowledge source available to RAG and allows the system to use a different or updated collection of documents."
+  },
+  {
+    "id": 32,
+    "question": "What is the relationship between the retriever and the non-parametric memory?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [7, 9, 13],
+    "reference_answer": "The retriever searches the external non-parametric document memory and selects documents that are relevant to the input."
+  },
+  {
+    "id": 33,
+    "question": "How does the RAG architecture combine pretrained knowledge with retrieved knowledge?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [1, 6, 7],
+    "reference_answer": "RAG combines knowledge encoded in the pretrained generator's parameters with information retrieved from an external document memory."
+  },
+  {
+    "id": 34,
+    "question": "What role does Wikipedia play in the RAG experiments?",
+    "answerability": "answerable",
+    "difficulty_type": "multi_chunk",
+    "relevant_chunks": [13, 17, 18],
+    "reference_answer": "Wikipedia provides the external document collection used by the retrieval component for the knowledge-intensive experiments."
+  },
+
+  {
+    "id": 35,
+    "question": "Why is it difficult to revise knowledge stored only in model parameters?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [3, 7],
+    "reference_answer": "Knowledge stored in model parameters cannot be easily expanded or revised without changing or retraining the model, whereas external memory can be updated separately."
+  },
+  {
+    "id": 36,
+    "question": "Why does RAG need an external document index?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [1, 3, 7],
+    "reference_answer": "The external document index provides a non-parametric memory that can supply additional knowledge to the generator and can be updated independently of model parameters."
+  },
+  {
+    "id": 37,
+    "question": "Why can RAG be useful when the required knowledge changes over time?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [3, 36, 38],
+    "reference_answer": "Because its external retrieval index can be updated or replaced, RAG can access a changed knowledge source without retraining the generator."
+  },
+  {
+    "id": 38,
+    "question": "Why might retrieving multiple documents be useful for generating an answer?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [11, 44],
+    "reference_answer": "Multiple retrieved documents can provide complementary evidence, allowing the generation process to aggregate information from several pieces of retrieved content."
+  },
+  {
+    "id": 39,
+    "question": "Why does RAG use a learned retriever instead of relying only on the generator's stored knowledge?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [3, 9, 13],
+    "reference_answer": "The retriever allows RAG to access relevant information from an external document collection instead of depending entirely on knowledge encoded in the generator parameters."
+  },
+  {
+    "id": 40,
+    "question": "Why can the external memory reduce the need to store all knowledge in model parameters?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [1, 3, 7],
+    "reference_answer": "The external document index stores retrievable knowledge separately, allowing the generator to access information through retrieval rather than encoding all of it in its parameters."
+  },
+  {
+    "id": 41,
+    "question": "Why is FEVER a useful evaluation task for retrieval-augmented systems?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [23, 24],
+    "reference_answer": "FEVER tests whether a system can retrieve evidence and use that evidence to determine whether a claim is supported, refuted, or unverifiable."
+  },
+  {
+    "id": 42,
+    "question": "Why is replacing the index different from retraining the generator?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [15, 36, 38],
+    "reference_answer": "The retrieval index is an external memory and can therefore be changed independently, while retraining changes the learned model parameters."
+  },
+  {
+    "id": 43,
+    "question": "What advantage does the external memory provide for knowledge updates at test time?",
+    "answerability": "answerable",
+    "difficulty_type": "reasoning",
+    "relevant_chunks": [36, 38],
+    "reference_answer": "The external memory can be replaced or updated at test time, allowing new knowledge to become available without retraining the generator."
+  },
+
+  {
+    "id": 44,
+    "question": "What happens when more documents are retrieved by the RAG system?",
+    "answerability": "answerable",
+    "difficulty_type": "depth_sensitive",
+    "relevant_chunks": [38, 39],
+    "reference_answer": "The paper studies the effect of retrieving more documents and shows that changing the number of retrieved documents can affect performance."
+  },
+  {
+    "id": 45,
+    "question": "What evidence does the paper provide about the effect of retrieval depth?",
+    "answerability": "answerable",
+    "difficulty_type": "depth_sensitive",
+    "relevant_chunks": [38, 39],
+    "reference_answer": "The paper includes experiments examining how performance changes when the system retrieves different numbers of documents."
+  },
+  {
+    "id": 46,
+    "question": "Which task involves retrieving evidence from Wikipedia and reasoning over that evidence?",
+    "answerability": "answerable",
+    "difficulty_type": "depth_sensitive",
+    "relevant_chunks": [23, 24],
+    "reference_answer": "FEVER involves retrieving evidence from Wikipedia and reasoning over the retrieved evidence for fact verification."
+  },
+
+  {
+    "id": 47,
+    "question": "What future direction involves combining information from several retrieved pieces of content?",
+    "answerability": "answerable",
+    "difficulty_type": "ranking_challenging",
+    "relevant_chunks": [44, 45],
+    "reference_answer": "The paper identifies aggregation of content from several retrieved pieces as an area for future work."
+  },
+  {
+    "id": 48,
+    "question": "How does the paper characterize the benefit of index hot-swapping?",
+    "answerability": "answerable",
+    "difficulty_type": "ranking_challenging",
+    "relevant_chunks": [36],
+    "reference_answer": "Index hot-swapping demonstrates that the non-parametric memory can be changed easily, allowing the external knowledge source to be updated."
+  },
+  {
+    "id": 49,
+    "question": "What does the paper say about using different retrieval indices?",
+    "answerability": "answerable",
+    "difficulty_type": "ranking_challenging",
+    "relevant_chunks": [36, 38],
+    "reference_answer": "The paper studies replacing the non-parametric retrieval index and shows that the external memory can be changed independently of the generator."
+  },
+  {
+    "id": 50,
+    "question": "What experimental comparison examines the effect of changing the retrieval index?",
+    "answerability": "answerable",
+    "difficulty_type": "ranking_challenging",
+    "relevant_chunks": [38, 39],
+    "reference_answer": "The experiments compare different retrieval-index settings and examine how replacing the index and retrieving different numbers of documents affects the system."
+  },
+
+  {
+    "id": 51,
+    "question": "What is the accuracy of RAG on the ImageNet classification benchmark?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not report RAG accuracy on the ImageNet classification benchmark."
+  },
+  {
+    "id": 52,
+    "question": "What was the exact training time in hours for the RAG models?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not provide an exact training time in hours for the RAG models."
+  },
+  {
+    "id": 53,
+    "question": "What was the electricity cost of training the RAG models?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not report the electricity cost of training the RAG models."
+  },
+  {
+    "id": 54,
+    "question": "What was the exact number of parameters in the retrieval index?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not provide an exact parameter count for the retrieval index because the index is an external document memory rather than the model's learned parameters."
+  },
+  {
+    "id": 55,
+    "question": "What was the monthly subscription price of the Wikipedia source used by the researchers?",
+    "answerability": "unanswerable",
+    "difficulty_type": "out_of_corpus",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not provide information about a monthly subscription price for the Wikipedia source."
+  },
+
+  {
+    "id": 56,
+    "question": "Does the RAG paper prove that retrieval always improves generation quality?",
+    "answerability": "unanswerable",
+    "difficulty_type": "ambiguous_unsupported",
+    "relevant_chunks": [],
+    "reference_answer": "The paper reports experimental improvements for RAG on several tasks, but it does not establish that retrieval always improves generation quality in every setting."
+  },
+  {
+    "id": 57,
+    "question": "Does the RAG paper state that retrieving exactly 10 documents is always optimal?",
+    "answerability": "unanswerable",
+    "difficulty_type": "ambiguous_unsupported",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not establish that exactly 10 retrieved documents are always optimal; it studies different retrieval settings and numbers of documents."
+  },
+  {
+    "id": 58,
+    "question": "Does the paper establish that the RAG retriever never makes retrieval mistakes?",
+    "answerability": "unanswerable",
+    "difficulty_type": "ambiguous_unsupported",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not establish that the retriever never makes mistakes. Retrieval quality is an experimental component of the system."
+  },
+  {
+    "id": 59,
+    "question": "Does the RAG paper claim that every generated answer is fully supported by retrieved evidence?",
+    "answerability": "unanswerable",
+    "difficulty_type": "ambiguous_unsupported",
+    "relevant_chunks": [],
+    "reference_answer": "The paper does not establish that every generated answer is fully supported by retrieved evidence."
+  },
+  {
+    "id": 60,
+    "question": "Does the RAG paper show that a larger retrieval depth always produces better results?",
+    "answerability": "unanswerable",
+    "difficulty_type": "ambiguous_unsupported",
+    "relevant_chunks": [],
+    "reference_answer": "The paper studies the effect of retrieving different numbers of documents, but it does not establish that increasing retrieval depth always improves results."
+  }
 ]

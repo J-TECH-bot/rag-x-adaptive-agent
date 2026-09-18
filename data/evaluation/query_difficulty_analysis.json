@@ -8,16 +8,31 @@
       50
     ],
     "total_chunks": 77,
-    "total_questions": 10
+    "total_questions": 60,
+    "answerable_questions": 45,
+    "unanswerable_questions": 15
+  },
+  "summary": {
+    "answerable_questions": 45,
+    "unanswerable_questions": 15,
+    "retrieval_failures_at_50": 0,
+    "depth_sensitive_queries": 6,
+    "ranking_failures": 6,
+    "reranking_helped_queries": 16,
+    "easy_top10_queries": 39
   },
   "questions": [
     {
       "question_id": 1,
       "question": "What is Retrieval-Augmented Generation?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
         1,
-        8
+        2,
+        7
       ],
+      "reference_answer": "Retrieval-Augmented Generation combines a pretrained parametric model with a non-parametric external memory that can be accessed through retrieval.",
       "depth_analysis": {
         "10": {
           "dense": {
@@ -38,7 +53,8 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 2,
+            "rank_improvement": -1
           }
         },
         "20": {
@@ -60,7 +76,8 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 2,
+            "rank_improvement": -1
           }
         },
         "50": {
@@ -82,30 +99,41 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 2,
+            "rank_improvement": -1
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": false,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
       }
     },
     {
       "question_id": 2,
       "question": "What are the two components of a Retrieval-Augmented Generation model?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
-        8,
-        9
+        9,
+        10
       ],
+      "reference_answer": "The two main components are a retriever, which retrieves relevant documents, and a generator, which generates text conditioned on the input and retrieved documents.",
       "depth_analysis": {
         "10": {
           "dense": {
-            "contains_relevant": true,
-            "relevant_rank": 5,
+            "contains_relevant": false,
+            "relevant_rank": null,
             "score_gap": 0.005139350891113281
           },
           "bm25": {
@@ -114,20 +142,21 @@
             "score_gap": 0.1199930986725608
           },
           "hybrid": {
-            "contains_relevant": true,
-            "relevant_rank": 7,
+            "contains_relevant": false,
+            "relevant_rank": null,
             "score_gap": 0.0005124262379021804
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
-            "contains_relevant": true,
-            "relevant_rank": 4
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
           }
         },
         "20": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 5,
+            "relevant_rank": 14,
             "score_gap": 0.005139350891113281
           },
           "bm25": {
@@ -143,13 +172,14 @@
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 5
+            "relevant_rank": 5,
+            "rank_improvement": 7
           }
         },
         "50": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 5,
+            "relevant_rank": 14,
             "score_gap": 0.005139350891113281
           },
           "bm25": {
@@ -159,36 +189,48 @@
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 11,
+            "relevant_rank": 14,
             "score_gap": 0.0005124262379021804
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 6
+            "relevant_rank": 5,
+            "rank_improvement": 9
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
-        "depth_sensitive": false,
-        "easy_at_top10": true,
-        "reranking_helped": true,
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "ranking_failure": true,
+        "reranking_helped": false,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 14
       }
     },
     {
       "question_id": 3,
       "question": "What is the difference between parametric and non-parametric memory?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
         1,
-        2
+        3,
+        7
       ],
+      "reference_answer": "Parametric memory is stored in the parameters of a pretrained model, while non-parametric memory is stored externally in a retrievable document index.",
       "depth_analysis": {
         "10": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 4,
+            "relevant_rank": 2,
             "score_gap": 0.02902376651763916
           },
           "bm25": {
@@ -204,13 +246,14 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         },
         "20": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 4,
+            "relevant_rank": 2,
             "score_gap": 0.02902376651763916
           },
           "bm25": {
@@ -226,13 +269,14 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         },
         "50": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 4,
+            "relevant_rank": 2,
             "score_gap": 0.02902376651763916
           },
           "bm25": {
@@ -248,25 +292,37 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": false,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
       }
     },
     {
       "question_id": 4,
       "question": "What datasets are used to evaluate the RAG models?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
+        17,
         18,
         19
       ],
+      "reference_answer": "The experiments evaluate RAG on several knowledge-intensive tasks including Natural Questions, TriviaQA, WebQuestions, CuratedTrec, MSMARCO, Jeopardy question generation, and FEVER.",
       "depth_analysis": {
         "10": {
           "dense": {
@@ -287,7 +343,8 @@
           "dense_bm25_agreement": 0.05263157894736842,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 6
           }
         },
         "20": {
@@ -309,7 +366,8 @@
           "dense_bm25_agreement": 0.05263157894736842,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 3
           }
         },
         "50": {
@@ -331,109 +389,133 @@
           "dense_bm25_agreement": 0.05263157894736842,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 3
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": true,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 4
       }
     },
     {
       "question_id": 5,
       "question": "What is the benefit of replacing the retrieval index?",
+      "answerability": "answerable",
+      "difficulty_type": "depth_sensitive",
       "relevant_chunks": [
-        43,
-        44
+        36,
+        38
       ],
+      "reference_answer": "Replacing the retrieval index allows the external knowledge of RAG to be updated without retraining the generator.",
       "depth_analysis": {
         "10": {
           "dense": {
-            "contains_relevant": false,
-            "relevant_rank": null,
-            "score_gap": 0.004266977310180664
-          },
-          "bm25": {
-            "contains_relevant": false,
-            "relevant_rank": null,
-            "score_gap": 1.2220245385208397
-          },
-          "hybrid": {
-            "contains_relevant": false,
-            "relevant_rank": null,
-            "score_gap": 0.0007600486431131592
-          },
-          "dense_bm25_agreement": 0.25,
-          "reranked": {
-            "contains_relevant": false,
-            "relevant_rank": null
-          }
-        },
-        "20": {
-          "dense": {
-            "contains_relevant": false,
-            "relevant_rank": null,
+            "contains_relevant": true,
+            "relevant_rank": 2,
             "score_gap": 0.004266977310180664
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 18,
+            "relevant_rank": 2,
             "score_gap": 1.2220245385208397
           },
           "hybrid": {
-            "contains_relevant": false,
-            "relevant_rank": null,
+            "contains_relevant": true,
+            "relevant_rank": 1,
             "score_gap": 0.0007600486431131592
           },
           "dense_bm25_agreement": 0.25,
           "reranked": {
-            "contains_relevant": false,
-            "relevant_rank": null
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.004266977310180664
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.2220245385208397
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         },
         "50": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 43,
+            "relevant_rank": 2,
             "score_gap": 0.004266977310180664
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 18,
+            "relevant_rank": 2,
             "score_gap": 1.2220245385208397
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 25,
+            "relevant_rank": 1,
             "score_gap": 0.0007600486431131592
           },
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 8
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
-        "depth_sensitive": true,
-        "easy_at_top10": false,
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": false,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
       }
     },
     {
       "question_id": 6,
       "question": "What is the role of the retriever in RAG?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
-        8,
         9,
-        11
+        11,
+        13
       ],
+      "reference_answer": "The retriever selects relevant documents from the external non-parametric memory based on the input query.",
       "depth_analysis": {
         "10": {
           "dense": {
@@ -443,7 +525,7 @@
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 7,
+            "relevant_rank": 5,
             "score_gap": 1.7624372644553876
           },
           "hybrid": {
@@ -454,7 +536,8 @@
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 3
+            "relevant_rank": 3,
+            "rank_improvement": -1
           }
         },
         "20": {
@@ -465,7 +548,7 @@
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 7,
+            "relevant_rank": 5,
             "score_gap": 1.7624372644553876
           },
           "hybrid": {
@@ -476,7 +559,8 @@
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 5
+            "relevant_rank": 5,
+            "rank_improvement": -3
           }
         },
         "50": {
@@ -487,7 +571,7 @@
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 7,
+            "relevant_rank": 5,
             "score_gap": 1.7624372644553876
           },
           "hybrid": {
@@ -498,26 +582,37 @@
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 5
+            "relevant_rank": 5,
+            "rank_improvement": -3
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": false,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
       }
     },
     {
       "question_id": 7,
       "question": "How does RAG improve knowledge-intensive NLP tasks?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
         1,
         2,
-        8
+        7
       ],
+      "reference_answer": "RAG improves knowledge-intensive NLP by combining a pretrained generator with retrieved external knowledge, allowing the model to access information beyond its parametric memory.",
       "depth_analysis": {
         "10": {
           "dense": {
@@ -538,7 +633,8 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 1
           }
         },
         "20": {
@@ -560,7 +656,8 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 1
           }
         },
         "50": {
@@ -582,192 +679,230 @@
           "dense_bm25_agreement": 0.25,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 1
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": true,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
       }
     },
     {
       "question_id": 8,
       "question": "What is the advantage of non-parametric memory?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
       "relevant_chunks": [
-        1,
-        2,
-        43,
-        44
+        3,
+        7,
+        36,
+        38
       ],
+      "reference_answer": "Non-parametric memory can be updated or replaced independently of the model parameters, making it easier to update the model's external knowledge.",
       "depth_analysis": {
         "10": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 6,
+            "relevant_rank": 2,
             "score_gap": 0.00772470235824585
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 6,
+            "relevant_rank": 1,
             "score_gap": 0.4151007570380667
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 2,
+            "relevant_rank": 3,
             "score_gap": 0.0002473428312980558
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 2
           }
         },
         "20": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 6,
+            "relevant_rank": 2,
             "score_gap": 0.00772470235824585
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 6,
+            "relevant_rank": 1,
             "score_gap": 0.4151007570380667
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 2,
+            "relevant_rank": 3,
             "score_gap": 0.0002473428312980558
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 2
           }
         },
         "50": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 6,
+            "relevant_rank": 2,
             "score_gap": 0.00772470235824585
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 6,
+            "relevant_rank": 1,
             "score_gap": 0.4151007570380667
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 2,
+            "relevant_rank": 3,
             "score_gap": 0.0002473428312980558
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 2
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
-        "reranking_helped": false,
+        "ranking_failure": false,
+        "reranking_helped": true,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 3
       }
     },
     {
       "question_id": 9,
       "question": "What is the FEVER task used for in the experiments?",
+      "answerability": "answerable",
+      "difficulty_type": "depth_sensitive",
       "relevant_chunks": [
-        8
+        23,
+        24
       ],
+      "reference_answer": "FEVER is a fact verification task where the system retrieves evidence from Wikipedia and reasons over that evidence to determine whether a claim is supported, refuted, or lacks sufficient information.",
       "depth_analysis": {
         "10": {
           "dense": {
-            "contains_relevant": false,
-            "relevant_rank": null,
-            "score_gap": 0.03770112991333008
-          },
-          "bm25": {
-            "contains_relevant": false,
-            "relevant_rank": null,
-            "score_gap": 0.8183874966958324
-          },
-          "hybrid": {
-            "contains_relevant": false,
-            "relevant_rank": null,
-            "score_gap": 0.0022124863620715945
-          },
-          "dense_bm25_agreement": 0.17647058823529413,
-          "reranked": {
-            "contains_relevant": false,
-            "relevant_rank": null
-          }
-        },
-        "20": {
-          "dense": {
-            "contains_relevant": false,
-            "relevant_rank": null,
+            "contains_relevant": true,
+            "relevant_rank": 2,
             "score_gap": 0.03770112991333008
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 18,
+            "relevant_rank": 1,
             "score_gap": 0.8183874966958324
           },
           "hybrid": {
-            "contains_relevant": false,
-            "relevant_rank": null,
+            "contains_relevant": true,
+            "relevant_rank": 1,
             "score_gap": 0.0022124863620715945
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
-            "contains_relevant": false,
-            "relevant_rank": null
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.03770112991333008
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.8183874966958324
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0022124863620715945
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         },
         "50": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 33,
+            "relevant_rank": 2,
             "score_gap": 0.03770112991333008
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 18,
+            "relevant_rank": 1,
             "score_gap": 0.8183874966958324
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 21,
+            "relevant_rank": 1,
             "score_gap": 0.0022124863620715945
           },
           "dense_bm25_agreement": 0.17647058823529413,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 2
+            "relevant_rank": 1,
+            "rank_improvement": 0
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
-        "depth_sensitive": true,
-        "easy_at_top10": false,
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": false,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
       }
     },
     {
       "question_id": 10,
       "question": "What future work is suggested for RAG?",
+      "answerability": "answerable",
+      "difficulty_type": "ranking_challenging",
       "relevant_chunks": [
-        43,
-        44
+        44,
+        45
       ],
+      "reference_answer": "The paper suggests further work on retrieving and aggregating evidence from multiple pieces of retrieved content and exploring RAG techniques across additional settings.",
       "depth_analysis": {
         "10": {
           "dense": {
@@ -788,60 +923,4909 @@
           "dense_bm25_agreement": 0.05263157894736842,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 1,
+            "rank_improvement": 4
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 13,
+            "score_gap": 0.06216278672218323
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9280927459533732
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 4.680862955511178e-05
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 13,
+            "score_gap": 0.06216278672218323
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9280927459533732
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 4.680862955511178e-05
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 4
+      }
+    },
+    {
+      "question_id": 11,
+      "question": "How does RAG-Sequence differ from RAG-Token?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        10,
+        11,
+        12
+      ],
+      "reference_answer": "RAG-Sequence uses the same retrieved document for the entire generated sequence, whereas RAG-Token can use different retrieved documents for different generated tokens.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.04298257827758789
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.945603675846935
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0014231499051233429
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.04298257827758789
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.945603675846935
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0014231499051233429
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.04298257827758789
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.945603675846935
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0014231499051233429
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 12,
+      "question": "What type of index is used as the non-parametric memory in RAG?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        1,
+        13,
+        17
+      ],
+      "reference_answer": "RAG uses a dense vector index containing documents as its non-parametric memory.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.01938241720199585
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.2459798255040404
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 0.0006936486715898478
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 8
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 12,
+            "score_gap": 0.01938241720199585
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.2459798255040404
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.0006936486715898478
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 4
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 12,
+            "score_gap": 0.01938241720199585
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.2459798255040404
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.0006936486715898478
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 4
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 6
+      }
+    },
+    {
+      "question_id": 13,
+      "question": "Why can the retrieval index be updated without retraining the generator?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        36,
+        38
+      ],
+      "reference_answer": "The retrieval index is an external non-parametric memory, so its contents can be replaced or updated without changing the generator parameters.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.014306843280792236
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.25772040809771113
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.5384615384615384,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": -2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.014306843280792236
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.25772040809771113
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.5384615384615384,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": -2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.014306843280792236
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.25772040809771113
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.5384615384615384,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": -2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 14,
+      "question": "What does the retriever return to the generator?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        9,
+        11
+      ],
+      "reference_answer": "The retriever returns the top-K retrieved documents that are then used by the generator.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.08747303485870361
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 3.6207694150227177
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.08747303485870361
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 3.6207694150227177
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.08747303485870361
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 3.6207694150227177
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 3
+      }
+    },
+    {
+      "question_id": 15,
+      "question": "Why is external knowledge useful for knowledge-intensive tasks?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        1,
+        3,
+        7
+      ],
+      "reference_answer": "External knowledge gives the model access to information that may not be stored in its parameters and allows the model's knowledge source to be updated.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.027394354343414307
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.5833007343523917
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00025601638504864355
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.027394354343414307
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.5833007343523917
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00025601638504864355
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.027394354343414307
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.5833007343523917
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00025601638504864355
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 16,
+      "question": "What is the accuracy of RAG on the MNIST dataset?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not report RAG accuracy on the MNIST dataset.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.06983336806297302
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7499487337298714
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00028004213455033733
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
           }
         },
         "20": {
           "dense": {
             "contains_relevant": false,
             "relevant_rank": null,
-            "score_gap": 0.06216278672218323
+            "score_gap": 0.06983336806297302
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7499487337298714
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00028004213455033733
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.06983336806297302
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7499487337298714
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00028004213455033733
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 17,
+      "question": "What GPU model was used to train the RAG models?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not provide enough information to establish the GPU model used for training.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.020632773637771606
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 3.0072441258299083
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.001613362482927698
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.020632773637771606
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 3.0072441258299083
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007796815924269174
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.020632773637771606
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 3.0072441258299083
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007796815924269174
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 18,
+      "question": "What is the stock price of NVIDIA mentioned in the RAG paper?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The RAG paper does not contain NVIDIA stock price information.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.007714390754699707
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 3.767510019381497
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.013909587680079483
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.007714390754699707
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 3.767510019381497
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00017491936217403636
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.007714390754699707
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 3.767510019381497
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00017491936217403636
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 19,
+      "question": "Who is the CEO of OpenAI according to the RAG paper?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The RAG paper does not provide information about the CEO of OpenAI.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.05655544996261597
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00408269470100997
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00042271664662556566
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.05655544996261597
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00408269470100997
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00042271664662556566
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.05655544996261597
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00408269470100997
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00042271664662556566
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 20,
+      "question": "What is the weather in Mumbai on the day the RAG paper was published?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The RAG paper does not contain weather information for Mumbai.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.058730751276016235
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7708733938189063
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00027093202496428215
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.058730751276016235
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7708733938189063
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00027093202496428215
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.058730751276016235
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7708733938189063
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00027093202496428215
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 21,
+      "question": "What problem does RAG address in knowledge-intensive NLP?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        1,
+        3
+      ],
+      "reference_answer": "RAG addresses the limitations of relying only on knowledge stored in model parameters by allowing the model to retrieve information from an external memory.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.006118357181549072
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 2,
-            "score_gap": 1.9280927459533732
+            "relevant_rank": 7,
+            "score_gap": 0.0535855132594687
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.012817644797091823
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.006118357181549072
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0535855132594687
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 10,
-            "score_gap": 4.680862955511178e-05
+            "relevant_rank": 18,
+            "score_gap": 0.00012146654038091773
           },
           "dense_bm25_agreement": 0.05263157894736842,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 18,
+            "rank_improvement": 0
           }
         },
         "50": {
           "dense": {
             "contains_relevant": true,
-            "relevant_rank": 22,
-            "score_gap": 0.06216278672218323
+            "relevant_rank": 45,
+            "score_gap": 0.006118357181549072
           },
           "bm25": {
             "contains_relevant": true,
-            "relevant_rank": 2,
-            "score_gap": 1.9280927459533732
+            "relevant_rank": 7,
+            "score_gap": 0.0535855132594687
           },
           "hybrid": {
             "contains_relevant": true,
-            "relevant_rank": 7,
-            "score_gap": 4.680862955511178e-05
+            "relevant_rank": 41,
+            "score_gap": 0.00012146654038091773
           },
           "dense_bm25_agreement": 0.05263157894736842,
           "reranked": {
             "contains_relevant": true,
-            "relevant_rank": 1
+            "relevant_rank": 30,
+            "rank_improvement": 11
           }
         }
       },
       "difficulty_signals": {
-        "unreachable_at_50": false,
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "ranking_failure": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 41
+      }
+    },
+    {
+      "question_id": 22,
+      "question": "What are the two forms of memory used by RAG?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        1,
+        7
+      ],
+      "reference_answer": "RAG combines parametric memory stored in a pretrained model with non-parametric memory stored in an external document index.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.011182725429534912
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.8826399457462628
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0036950299245381256
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.011182725429534912
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.8826399457462628
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.00318321297436501
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 5
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.011182725429534912
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.8826399457462628
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.00318321297436501
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 5
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "ranking_failure": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 6
+      }
+    },
+    {
+      "question_id": 23,
+      "question": "What model is used as the generator in the RAG experiments?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        14
+      ],
+      "reference_answer": "The RAG experiments use BART as the sequence-to-sequence generator.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.04797881841659546
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.4914169987020287
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.0012724748810153397
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 9,
+            "rank_improvement": -3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.04797881841659546
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.4914169987020287
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.0012724748810153397
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 16,
+            "rank_improvement": -5
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 29,
+            "score_gap": 0.04797881841659546
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.4914169987020287
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 0.0012724748810153397
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 32,
+            "rank_improvement": -22
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
         "depth_sensitive": false,
         "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 10
+      }
+    },
+    {
+      "question_id": 24,
+      "question": "What retrieval system is used to search the document index?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        13
+      ],
+      "reference_answer": "The paper uses Maximum Inner Product Search (MIPS) to retrieve documents from the document index.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.05438947677612305
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.5460905811620815
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007608113653195664
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.05438947677612305
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.5460905811620815
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007608113653195664
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.05438947677612305
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.5460905811620815
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007608113653195664
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 25,
+      "question": "What corpus is used as the main source of external knowledge?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        17
+      ],
+      "reference_answer": "The experiments use a Wikipedia dump as the main source of external knowledge.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.026914507150650024
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.543281639028409
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0006526721360480964
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.026914507150650024
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.543281639028409
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0006526721360480964
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.026914507150650024
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 26,
+            "score_gap": 2.543281639028409
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 0.0006526721360480964
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "rank_improvement": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "ranking_failure": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": true,
+        "first_relevant_rank": 10
+      }
+    },
+    {
+      "question_id": 26,
+      "question": "What happens to the document encoder and index during training?",
+      "answerability": "answerable",
+      "difficulty_type": "easy",
+      "relevant_chunks": [
+        15
+      ],
+      "reference_answer": "The document encoder and document index are kept fixed during training.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.00966605544090271
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.6948640223276659
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.00024038461538461453
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.00966605544090271
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.6948640223276659
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.00024038461538461453
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.00966605544090271
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.6948640223276659
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.00024038461538461453
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 3
+      }
+    },
+    {
+      "question_id": 27,
+      "question": "How does RAG-Sequence use retrieved documents during generation?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        10,
+        11
+      ],
+      "reference_answer": "RAG-Sequence considers retrieved documents for generating the entire output sequence and uses the same retrieved document throughout that sequence.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.08979588747024536
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 3.302560219543553
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00022614201718679922
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.08979588747024536
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 3.302560219543553
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00022614201718679922
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.08979588747024536
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 3.302560219543553
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00022614201718679922
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
         "reranking_helped": true,
         "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 4
+      }
+    },
+    {
+      "question_id": 28,
+      "question": "How does RAG-Token use retrieved documents differently from RAG-Sequence?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        11,
+        12
+      ],
+      "reference_answer": "RAG-Token can condition different generated tokens on different retrieved documents, while RAG-Sequence uses one document for the complete sequence.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.07024198770523071
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.5067962893197713
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007131067416630554
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.07024198770523071
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.5067962893197713
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007131067416630554
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.07024198770523071
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.5067962893197713
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007131067416630554
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 29,
+      "question": "How are retrieval and generation combined in the RAG architecture?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        6,
+        9,
+        10
+      ],
+      "reference_answer": "The retriever selects relevant documents and the sequence-to-sequence generator conditions its output on the input together with the retrieved documents.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.03275173902511597
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.2936941054506157
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0009775171065493637
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "rank_improvement": -1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.03275173902511597
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 17,
+            "score_gap": 2.2936941054506157
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.0009775171065493637
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 12,
+            "rank_improvement": -1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.03275173902511597
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 17,
+            "score_gap": 2.2936941054506157
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "score_gap": 0.0009775171065493637
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "rank_improvement": 7
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 15
+      }
+    },
+    {
+      "question_id": 30,
+      "question": "Why is a non-parametric memory easier to update than parametric memory?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        3,
+        7,
+        36
+      ],
+      "reference_answer": "The non-parametric memory is external to the model parameters, so its documents or index can be changed without retraining the model.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.029598146677017212
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.5659986510890356
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00022614201718679922
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.029598146677017212
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.5659986510890356
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00022614201718679922
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.029598146677017212
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.5659986510890356
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00022614201718679922
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 4
+      }
+    },
+    {
+      "question_id": 31,
+      "question": "How does replacing the retrieval index affect the external knowledge available to RAG?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        36,
+        38,
+        39
+      ],
+      "reference_answer": "Replacing the retrieval index changes the external knowledge source available to RAG and allows the system to use a different or updated collection of documents.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.014879167079925537
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.2246792986807424
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0015063378363219734
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.014879167079925537
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.2246792986807424
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0015063378363219734
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.014879167079925537
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.2246792986807424
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0015063378363219734
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 32,
+      "question": "What is the relationship between the retriever and the non-parametric memory?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        7,
+        9,
+        13
+      ],
+      "reference_answer": "The retriever searches the external non-parametric document memory and selects documents that are relevant to the input.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.003569483757019043
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.06436909741877983
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0020913338453661043
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "rank_improvement": -2
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.003569483757019043
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.06436909741877983
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.0015240984658760476
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "rank_improvement": -2
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 0.003569483757019043
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.06436909741877983
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.0015240984658760476
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "rank_improvement": -2
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 3
+      }
+    },
+    {
+      "question_id": 33,
+      "question": "How does the RAG architecture combine pretrained knowledge with retrieved knowledge?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        1,
+        6,
+        7
+      ],
+      "reference_answer": "RAG combines knowledge encoded in the pretrained generator's parameters with information retrieved from an external document memory.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.04402768611907959
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.2806903490236614
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "score_gap": 0.0027099969600581295
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 7
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.04402768611907959
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.2806903490236614
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "score_gap": 0.0027099969600581295
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 7
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.04402768611907959
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.2806903490236614
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "score_gap": 0.0027099969600581295
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 7
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 8
+      }
+    },
+    {
+      "question_id": 34,
+      "question": "What role does Wikipedia play in the RAG experiments?",
+      "answerability": "answerable",
+      "difficulty_type": "multi_chunk",
+      "relevant_chunks": [
+        13,
+        17,
+        18
+      ],
+      "reference_answer": "Wikipedia provides the external document collection used by the retrieval component for the knowledge-intensive experiments.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 0.18154168128967285
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "score_gap": 0.3574518615637139
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.0023707926438108554
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 0.18154168128967285
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "score_gap": 0.3574518615637139
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0023707926438108554
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 10,
+            "score_gap": 0.18154168128967285
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "score_gap": 0.3574518615637139
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0023707926438108554
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 4
+      }
+    },
+    {
+      "question_id": 35,
+      "question": "Why is it difficult to revise knowledge stored only in model parameters?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        3,
+        7
+      ],
+      "reference_answer": "Knowledge stored in model parameters cannot be easily expanded or revised without changing or retraining the model, whereas external memory can be updated separately.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.034541547298431396
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.8766314714709953
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.015352589123080924
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.034541547298431396
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.8766314714709953
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0027964866674544085
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.034541547298431396
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.8766314714709953
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0027964866674544085
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 36,
+      "question": "Why does RAG need an external document index?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        1,
+        3,
+        7
+      ],
+      "reference_answer": "The external document index provides a non-parametric memory that can supply additional knowledge to the generator and can be updated independently of model parameters.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0875045657157898
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 2.894063018097132
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0012100211753705709
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0875045657157898
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 2.894063018097132
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010501398712507506
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 26,
+            "score_gap": 0.0875045657157898
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 2.894063018097132
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 25,
+            "score_gap": 0.0010501398712507506
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 15,
+            "rank_improvement": 10
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "ranking_failure": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": true,
+        "first_relevant_rank": 25
+      }
+    },
+    {
+      "question_id": 37,
+      "question": "Why can RAG be useful when the required knowledge changes over time?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        3,
+        36,
+        38
+      ],
+      "reference_answer": "Because its external retrieval index can be updated or replaced, RAG can access a changed knowledge source without retraining the generator.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.09849536418914795
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.2975677284271523
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 6,
+            "score_gap": 0.0004884004884004867
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 5
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.09849536418914795
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.2975677284271523
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0004884004884004867
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 6
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.09849536418914795
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 0.2975677284271523
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0004884004884004867
+          },
+          "dense_bm25_agreement": 0.3333333333333333,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 6
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 7
+      }
+    },
+    {
+      "question_id": 38,
+      "question": "Why might retrieving multiple documents be useful for generating an answer?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        11,
+        44
+      ],
+      "reference_answer": "Multiple retrieved documents can provide complementary evidence, allowing the generation process to aggregate information from several pieces of retrieved content.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.01311582326889038
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.6308834616938901
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0009191176470588272
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.01311582326889038
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 14,
+            "score_gap": 0.6308834616938901
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0009191176470588272
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": 5
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.01311582326889038
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 14,
+            "score_gap": 0.6308834616938901
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "score_gap": 0.0009191176470588272
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "rank_improvement": 4
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": true,
+        "easy_at_top10": false,
+        "ranking_failure": true,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 7
+      }
+    },
+    {
+      "question_id": 39,
+      "question": "Why does RAG use a learned retriever instead of relying only on the generator's stored knowledge?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        3,
+        9,
+        13
+      ],
+      "reference_answer": "The retriever allows RAG to access relevant information from an external document collection instead of depending entirely on knowledge encoded in the generator parameters.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.07940757274627686
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.814343784003535
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "rank_improvement": -3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.07940757274627686
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.814343784003535
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 7,
+            "rank_improvement": -5
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 3,
+            "score_gap": 0.07940757274627686
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.814343784003535
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.0007600486431131592
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 8,
+            "rank_improvement": -6
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 40,
+      "question": "Why can the external memory reduce the need to store all knowledge in model parameters?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        1,
+        3,
+        7
+      ],
+      "reference_answer": "The external document index stores retrievable knowledge separately, allowing the generator to access information through retrieval rather than encoding all of it in its parameters.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.05560186505317688
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.5510074582622728
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00024801587301587213
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.05560186505317688
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.5510074582622728
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00024801587301587213
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.05560186505317688
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.5510074582622728
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00024801587301587213
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 41,
+      "question": "Why is FEVER a useful evaluation task for retrieval-augmented systems?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        23,
+        24
+      ],
+      "reference_answer": "FEVER tests whether a system can retrieve evidence and use that evidence to determine whether a claim is supported, refuted, or unverifiable.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.01737731695175171
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.5707302711819366
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0014680694886224643
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.01737731695175171
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.5707302711819366
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0014680694886224643
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.01737731695175171
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.5707302711819366
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0014680694886224643
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 42,
+      "question": "Why is replacing the index different from retraining the generator?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        15,
+        36,
+        38
+      ],
+      "reference_answer": "The retrieval index is an external memory and can therefore be changed independently, while retraining changes the learned model parameters.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.015290290117263794
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.19635329759908
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0005204267499349519
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.015290290117263794
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.19635329759908
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0005204267499349519
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.015290290117263794
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.19635329759908
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0005204267499349519
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 43,
+      "question": "What advantage does the external memory provide for knowledge updates at test time?",
+      "answerability": "answerable",
+      "difficulty_type": "reasoning",
+      "relevant_chunks": [
+        36,
+        38
+      ],
+      "reference_answer": "The external memory can be replaced or updated at test time, allowing new knowledge to become available without retraining the generator.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.006592750549316406
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 1.3217962464969535
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.00023962189317820737
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.006592750549316406
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 1.3217962464969535
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.00023962189317820737
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.006592750549316406
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 1.3217962464969535
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.00023962189317820737
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 44,
+      "question": "What happens when more documents are retrieved by the RAG system?",
+      "answerability": "answerable",
+      "difficulty_type": "depth_sensitive",
+      "relevant_chunks": [
+        38,
+        39
+      ],
+      "reference_answer": "The paper studies the effect of retrieving more documents and shows that changing the number of retrieved documents can affect performance.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.02707117795944214
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9316167461286806
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007764431349835954
+          },
+          "dense_bm25_agreement": 0.6666666666666666,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.02707117795944214
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9316167461286806
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007764431349835954
+          },
+          "dense_bm25_agreement": 0.6666666666666666,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.02707117795944214
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.9316167461286806
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0007764431349835954
+          },
+          "dense_bm25_agreement": 0.6666666666666666,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 45,
+      "question": "What evidence does the paper provide about the effect of retrieval depth?",
+      "answerability": "answerable",
+      "difficulty_type": "depth_sensitive",
+      "relevant_chunks": [
+        38,
+        39
+      ],
+      "reference_answer": "The paper includes experiments examining how performance changes when the system retrieves different numbers of documents.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.04823067784309387
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.1758680100669814
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0004800065085628219
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.04823067784309387
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.1758680100669814
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0004800065085628219
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.04823067784309387
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 1.1758680100669814
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0004800065085628219
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 46,
+      "question": "Which task involves retrieving evidence from Wikipedia and reasoning over that evidence?",
+      "answerability": "answerable",
+      "difficulty_type": "depth_sensitive",
+      "relevant_chunks": [
+        23,
+        24
+      ],
+      "reference_answer": "FEVER involves retrieving evidence from Wikipedia and reasoning over the retrieved evidence for fact verification.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0755203366279602
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.967061591329493
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0005288207297726097
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0755203366279602
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.967061591329493
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0005288207297726097
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0755203366279602
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 2.967061591329493
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0005288207297726097
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 47,
+      "question": "What future direction involves combining information from several retrieved pieces of content?",
+      "answerability": "answerable",
+      "difficulty_type": "ranking_challenging",
+      "relevant_chunks": [
+        44,
+        45
+      ],
+      "reference_answer": "The paper identifies aggregation of content from several retrieved pieces as an area for future work.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.013293176889419556
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 6.20248452198261
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0021403108929406237
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 14,
+            "score_gap": 0.013293176889419556
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 6.20248452198261
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0021403108929406237
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 14,
+            "score_gap": 0.013293176889419556
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 6.20248452198261
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.0021403108929406237
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 4
+      }
+    },
+    {
+      "question_id": 48,
+      "question": "How does the paper characterize the benefit of index hot-swapping?",
+      "answerability": "answerable",
+      "difficulty_type": "ranking_challenging",
+      "relevant_chunks": [
+        36
+      ],
+      "reference_answer": "Index hot-swapping demonstrates that the non-parametric memory can be changed easily, allowing the external knowledge source to be updated.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.024464845657348633
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.1364940741713685
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.00019483188540072444
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.024464845657348633
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.1364940741713685
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.00019483188540072444
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.024464845657348633
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 5,
+            "score_gap": 1.1364940741713685
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.00019483188540072444
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 0
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 49,
+      "question": "What does the paper say about using different retrieval indices?",
+      "answerability": "answerable",
+      "difficulty_type": "ranking_challenging",
+      "relevant_chunks": [
+        36,
+        38
+      ],
+      "reference_answer": "The paper studies replacing the non-parametric retrieval index and shows that the external memory can be changed independently of the generator.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.032560110092163086
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.9472305072107012
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 4,
+            "score_gap": 0.00088490354551354
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 3
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.032560110092163086
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 2.9472305072107012
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00034550738776090856
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.032560110092163086
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 11,
+            "score_gap": 2.9472305072107012
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "score_gap": 0.00034550738776090856
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "rank_improvement": 1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": true,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 2
+      }
+    },
+    {
+      "question_id": 50,
+      "question": "What experimental comparison examines the effect of changing the retrieval index?",
+      "answerability": "answerable",
+      "difficulty_type": "ranking_challenging",
+      "relevant_chunks": [
+        38,
+        39
+      ],
+      "reference_answer": "The experiments compare different retrieval-index settings and examine how replacing the index and retrieving different numbers of documents affects the system.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0017407536506652832
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.20546315034630425
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0010328529878371254
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0017407536506652832
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.20546315034630425
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0010328529878371254
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0017407536506652832
+          },
+          "bm25": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.20546315034630425
+          },
+          "hybrid": {
+            "contains_relevant": true,
+            "relevant_rank": 1,
+            "score_gap": 0.0010328529878371254
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": true,
+            "relevant_rank": 2,
+            "rank_improvement": -1
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": false,
+        "depth_sensitive": false,
+        "easy_at_top10": true,
+        "ranking_failure": false,
+        "reranking_helped": false,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": true,
+        "hybrid_top20": true,
+        "hybrid_top50": true,
+        "first_relevant_rank": 1
+      }
+    },
+    {
+      "question_id": 51,
+      "question": "What is the accuracy of RAG on the ImageNet classification benchmark?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not report RAG accuracy on the ImageNet classification benchmark.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.03499263525009155
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7499487337298714
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.03499263525009155
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7499487337298714
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.03499263525009155
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.7499487337298714
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.000768442622950824
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 52,
+      "question": "What was the exact training time in hours for the RAG models?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not provide an exact training time in hours for the RAG models.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0763053297996521
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.7000451116383228
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0004183769129421297
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0763053297996521
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.7000451116383228
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0004183769129421297
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0763053297996521
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.7000451116383228
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0004183769129421297
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 53,
+      "question": "What was the electricity cost of training the RAG models?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not report the electricity cost of training the RAG models.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.032743990421295166
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 4.696251017262682
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0009546009546009537
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.032743990421295166
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 4.696251017262682
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0009546009546009537
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.032743990421295166
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 4.696251017262682
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0009546009546009537
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 54,
+      "question": "What was the exact number of parameters in the retrieval index?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not provide an exact parameter count for the retrieval index because the index is an external document memory rather than the model's learned parameters.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00741887092590332
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.8962047318307693
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007152586353356694
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00741887092590332
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.8962047318307693
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007152586353356694
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.00741887092590332
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.8962047318307693
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0007152586353356694
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 55,
+      "question": "What was the monthly subscription price of the Wikipedia source used by the researchers?",
+      "answerability": "unanswerable",
+      "difficulty_type": "out_of_corpus",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not provide information about a monthly subscription price for the Wikipedia source.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.08303198218345642
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.848540630262411
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.01238502528595187
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.08303198218345642
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.848540630262411
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 6.033509800454362e-05
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.08303198218345642
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.848540630262411
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 6.033509800454362e-05
+          },
+          "dense_bm25_agreement": 0.05263157894736842,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 56,
+      "question": "Does the RAG paper prove that retrieval always improves generation quality?",
+      "answerability": "unanswerable",
+      "difficulty_type": "ambiguous_unsupported",
+      "relevant_chunks": [],
+      "reference_answer": "The paper reports experimental improvements for RAG on several tasks, but it does not establish that retrieval always improves generation quality in every setting.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.05568385124206543
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.3351590048128914
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0017459597295001877
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.05568385124206543
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.3351590048128914
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0017459597295001877
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.05568385124206543
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 1.3351590048128914
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0017459597295001877
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 57,
+      "question": "Does the RAG paper state that retrieving exactly 10 documents is always optimal?",
+      "answerability": "unanswerable",
+      "difficulty_type": "ambiguous_unsupported",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not establish that exactly 10 retrieved documents are always optimal; it studies different retrieval settings and numbers of documents.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.04994899034500122
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.0003427890961305
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010328529878371254
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.04994899034500122
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.0003427890961305
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010328529878371254
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.04994899034500122
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 2.0003427890961305
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010328529878371254
+          },
+          "dense_bm25_agreement": 0.25,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 58,
+      "question": "Does the paper establish that the RAG retriever never makes retrieval mistakes?",
+      "answerability": "unanswerable",
+      "difficulty_type": "ambiguous_unsupported",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not establish that the retriever never makes mistakes. Retrieval quality is an experimental component of the system.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.01158607006072998
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.16076255647489823
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.001951970634895949
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.01158607006072998
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.16076255647489823
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.001951970634895949
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.01158607006072998
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.16076255647489823
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.001951970634895949
+          },
+          "dense_bm25_agreement": 0.1111111111111111,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 59,
+      "question": "Does the RAG paper claim that every generated answer is fully supported by retrieved evidence?",
+      "answerability": "unanswerable",
+      "difficulty_type": "ambiguous_unsupported",
+      "relevant_chunks": [],
+      "reference_answer": "The paper does not establish that every generated answer is fully supported by retrieved evidence.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0089111328125
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 5.544486283727794
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0002873265168347183
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0089111328125
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 5.544486283727794
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0002873265168347183
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0089111328125
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 5.544486283727794
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0002873265168347183
+          },
+          "dense_bm25_agreement": 0.42857142857142855,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": false
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
+      }
+    },
+    {
+      "question_id": 60,
+      "question": "Does the RAG paper show that a larger retrieval depth always produces better results?",
+      "answerability": "unanswerable",
+      "difficulty_type": "ambiguous_unsupported",
+      "relevant_chunks": [],
+      "reference_answer": "The paper studies the effect of retrieving different numbers of documents, but it does not establish that increasing retrieval depth always improves results.",
+      "depth_analysis": {
+        "10": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.044726550579071045
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.27252012265896575
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010088272383354385
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "20": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.044726550579071045
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.27252012265896575
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010088272383354385
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        },
+        "50": {
+          "dense": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.044726550579071045
+          },
+          "bm25": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.27252012265896575
+          },
+          "hybrid": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "score_gap": 0.0010088272383354385
+          },
+          "dense_bm25_agreement": 0.17647058823529413,
+          "reranked": {
+            "contains_relevant": false,
+            "relevant_rank": null,
+            "rank_improvement": null
+          }
+        }
+      },
+      "difficulty_signals": {
+        "retrieval_failure_at_50": null,
+        "depth_sensitive": null,
+        "easy_at_top10": null,
+        "ranking_failure": null,
+        "reranking_helped": null,
+        "low_dense_bm25_agreement": true
+      },
+      "evidence_reachability": {
+        "hybrid_top10": false,
+        "hybrid_top20": false,
+        "hybrid_top50": false,
+        "first_relevant_rank": null
+      },
+      "unanswerable_analysis": {
+        "expected_answer": null,
+        "relevant_chunks_expected": false,
+        "requires_evidence_sufficiency_check": true
       }
     }
   ]
