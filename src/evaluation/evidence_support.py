@@ -1,4 +1,4 @@
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
 class EvidenceSupportJudge:
@@ -19,10 +19,13 @@ class EvidenceSupportJudge:
     ):
         self.model_name = model_name
 
-        self.model = pipeline(
-            "text2text-generation",
-            model=model_name
-        )
+        print(f"Loading evidence judge: {model_name}")
+
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+
+        print("Evidence judge loaded.")
 
     def judge(
         self,
@@ -33,8 +36,8 @@ class EvidenceSupportJudge:
         prompt = f"""
 You are an evidence verification system.
 
-Your task is to determine whether the provided evidence
-contains enough information to answer the question.
+Determine whether the provided evidence contains enough
+information to answer the question.
 
 Return exactly one label:
 
@@ -57,16 +60,32 @@ Evidence:
 Label:
 """
 
-        output = self.model(
+        inputs = self.tokenizer(
             prompt,
+            return_tensors="pt",
+            truncation=True,
+            max_length=2048
+        )
+
+        outputs = self.model.generate(
+            **inputs,
             max_new_tokens=10,
             do_sample=False
         )
 
-        raw_output = output[0]["generated_text"].strip()
+        raw_output = self.tokenizer.decode(
+            outputs[0],
+            skip_special_tokens=True
+        ).strip()
 
-        if "SUPPORTED" in raw_output.upper():
+        normalized = raw_output.upper()
+
+        if normalized.startswith("SUPPORTED"):
             label = "SUPPORTED"
+
+        elif normalized.startswith("INSUFFICIENT"):
+            label = "INSUFFICIENT"
+
         else:
             label = "INSUFFICIENT"
 
