@@ -8,7 +8,7 @@
     "prediction": "SUPPORTED",
     "predicted_behavior": "answer",
     "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "raw_output": "SUFFICIENT"
   },
   {
     "id": 2,
@@ -60,10 +60,10 @@
     "answerability": "answerable",
     "difficulty_type": "easy",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 7,
@@ -71,10 +71,10 @@
     "answerability": "answerable",
     "difficulty_type": "easy",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 8,
@@ -93,10 +93,10 @@
     "answerability": "answerable",
     "difficulty_type": "depth_sensitive",
     "expected_behavior": "answer",
-    "prediction": "INSUFFICIENT",
-    "predicted_behavior": "abstain",
-    "correct_behavior": false,
-    "raw_output": "INSUFFICIENT"
+    "prediction": "SUPPORTED",
+    "predicted_behavior": "answer",
+    "correct_behavior": true,
+    "raw_output": "SUFFICIENT"
   },
   {
     "id": 10,
@@ -159,10 +159,10 @@
     "answerability": "answerable",
     "difficulty_type": "reasoning",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 16,
@@ -170,10 +170,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "out_of_corpus",
     "expected_behavior": "abstain",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": false,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": true,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 17,
@@ -181,10 +181,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "out_of_corpus",
     "expected_behavior": "abstain",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": false,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": true,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 18,
@@ -236,10 +236,10 @@
     "answerability": "answerable",
     "difficulty_type": "easy",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 23,
@@ -247,10 +247,10 @@
     "answerability": "answerable",
     "difficulty_type": "easy",
     "expected_behavior": "answer",
-    "prediction": "INSUFFICIENT",
-    "predicted_behavior": "abstain",
-    "correct_behavior": false,
-    "raw_output": "INSUFFICIENT"
+    "prediction": "SUPPORTED",
+    "predicted_behavior": "answer",
+    "correct_behavior": true,
+    "raw_output": "SUPPORTED"
   },
   {
     "id": 24,
@@ -258,10 +258,10 @@
     "answerability": "answerable",
     "difficulty_type": "easy",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 25,
@@ -390,10 +390,10 @@
     "answerability": "answerable",
     "difficulty_type": "reasoning",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 37,
@@ -478,10 +478,10 @@
     "answerability": "answerable",
     "difficulty_type": "depth_sensitive",
     "expected_behavior": "answer",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": true,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": false,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 45,
@@ -489,10 +489,10 @@
     "answerability": "answerable",
     "difficulty_type": "depth_sensitive",
     "expected_behavior": "answer",
-    "prediction": "INSUFFICIENT",
-    "predicted_behavior": "abstain",
-    "correct_behavior": false,
-    "raw_output": "INSUFFICIENT"
+    "prediction": "SUPPORTED",
+    "predicted_behavior": "answer",
+    "correct_behavior": true,
+    "raw_output": "SUPPORTED"
   },
   {
     "id": 46,
@@ -555,10 +555,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "out_of_corpus",
     "expected_behavior": "abstain",
-    "prediction": "INSUFFICIENT",
-    "predicted_behavior": "abstain",
-    "correct_behavior": true,
-    "raw_output": "INSUFFICIENT"
+    "prediction": "SUPPORTED",
+    "predicted_behavior": "answer",
+    "correct_behavior": false,
+    "raw_output": "SUPPORTED"
   },
   {
     "id": 52,
@@ -566,10 +566,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "out_of_corpus",
     "expected_behavior": "abstain",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": false,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": true,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 53,
@@ -577,10 +577,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "out_of_corpus",
     "expected_behavior": "abstain",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": false,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": true,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 54,
@@ -588,10 +588,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "out_of_corpus",
     "expected_behavior": "abstain",
-    "prediction": "INSUFFICIENT",
-    "predicted_behavior": "abstain",
-    "correct_behavior": true,
-    "raw_output": "INSUFFICIENT"
+    "prediction": "SUPPORTED",
+    "predicted_behavior": "answer",
+    "correct_behavior": false,
+    "raw_output": "SUPPORTED"
   },
   {
     "id": 55,
@@ -610,10 +610,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "ambiguous_unsupported",
     "expected_behavior": "abstain",
-    "prediction": "INSUFFICIENT",
-    "predicted_behavior": "abstain",
-    "correct_behavior": true,
-    "raw_output": "INSUFFICIENT"
+    "prediction": "SUPPORTED",
+    "predicted_behavior": "answer",
+    "correct_behavior": false,
+    "raw_output": "SUPPORTED"
   },
   {
     "id": 57,
@@ -621,10 +621,10 @@
     "answerability": "unanswerable",
     "difficulty_type": "ambiguous_unsupported",
     "expected_behavior": "abstain",
-    "prediction": "SUPPORTED",
-    "predicted_behavior": "answer",
-    "correct_behavior": false,
-    "raw_output": "SUPPORTED"
+    "prediction": "INSUFFICIENT",
+    "predicted_behavior": "abstain",
+    "correct_behavior": true,
+    "raw_output": "INSUFFICIENT"
   },
   {
     "id": 58,

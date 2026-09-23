@@ -83,9 +83,11 @@ Label:
         if normalized.startswith("SUPPORTED"):
             label = "SUPPORTED"
 
+        elif normalized.startswith("SUFFICIENT"):
+            label = "SUPPORTED"
+
         elif normalized.startswith("INSUFFICIENT"):
             label = "INSUFFICIENT"
-
         else:
             label = "INSUFFICIENT"
 

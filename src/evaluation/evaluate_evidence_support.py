@@ -1,7 +1,7 @@
-
 import json
 
-from pypdf import PdfReader
+from ingestion.loader import load_pdf
+from ingestion.chunker import chunk_text
 
 from embeddings.embedder import Embedder
 from retrieval.vector_store import VectorStore
@@ -31,6 +31,10 @@ CHUNK_OVERLAP = 200
 # ============================================================
 
 def load_questions(path: str):
+    """
+    Load evaluation questions from JSON.
+    """
+
     with open(path, "r") as f:
         return json.load(f)
 
@@ -40,27 +44,19 @@ def load_questions(path: str):
 # ============================================================
 
 def load_chunks():
-    reader = PdfReader(PDF_PATH)
+    """
+    Load PDF text using the project's canonical PDF loader
+    and split it using the project's canonical sentence-aware
+    chunker.
+    """
 
-    text = "\n".join(
-        page.extract_text() or ""
-        for page in reader.pages
+    text = load_pdf(PDF_PATH)
+
+    chunks = chunk_text(
+        text,
+        chunk_size=CHUNK_SIZE,
+        chunk_overlap=CHUNK_OVERLAP
     )
-
-    chunks = []
-
-    start = 0
-    step = CHUNK_SIZE - CHUNK_OVERLAP
-
-    while start < len(text):
-        end = start + CHUNK_SIZE
-
-        chunk = text[start:end]
-
-        if chunk.strip():
-            chunks.append(chunk)
-
-        start += step
 
     return chunks
 
@@ -70,6 +66,10 @@ def load_chunks():
 # ============================================================
 
 def combine_evidence(results: list[dict]) -> str:
+    """
+    Combine retrieved chunks into one evidence string.
+    """
+
     return "\n\n".join(
         result["text"]
         for result in results
@@ -134,7 +134,7 @@ def main():
     )
 
     # IMPORTANT:
-    # Your VectorStore uses .add(), not .build()
+    # VectorStore uses .add(), not .build()
     vector_store.add(
         chunk_embeddings
     )
@@ -199,7 +199,7 @@ def main():
         # the judge's behavior.
         #
         # It is NOT passed to the retrieval system
-        # or the Evidence Support Judge.
+        # or Evidence Support Judge.
 
         expected_behavior = (
             "answer"
