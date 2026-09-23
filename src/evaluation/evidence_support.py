@@ -3,8 +3,14 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 class EvidenceSupportJudge:
     """
-    Determines whether retrieved evidence is sufficient
-    to answer a question.
+    Determines the relationship between a question and
+    the provided evidence.
+
+    Possible labels:
+
+        SUPPORTED
+        INSUFFICIENT
+        CONTRADICTED
 
     The judge only receives:
         - question
@@ -22,7 +28,6 @@ class EvidenceSupportJudge:
         print(f"Loading evidence judge: {model_name}")
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
         print("Evidence judge loaded.")
@@ -36,20 +41,42 @@ class EvidenceSupportJudge:
         prompt = f"""
 You are an evidence verification system.
 
-Determine whether the provided evidence contains enough
-information to answer the question.
+Determine the relationship between the QUESTION and the EVIDENCE.
 
-Return exactly one label:
+Return exactly ONE label:
 
 SUPPORTED
 INSUFFICIENT
+CONTRADICTED
 
-SUPPORTED means:
-The evidence contains enough information to answer the question.
+Definitions:
 
-INSUFFICIENT means:
-The evidence does not contain enough information to answer
-the question, even if the evidence is related to the topic.
+SUPPORTED:
+The evidence directly provides enough information to support
+the claim or answer the question.
+
+INSUFFICIENT:
+The evidence is related to the question, but it does not
+contain enough information to establish the answer or claim.
+
+CONTRADICTED:
+The evidence contains information that conflicts with the
+claim or shows that the claim is false, too strong, or not
+supported as stated.
+
+Important:
+Pay special attention to words such as:
+- always
+- never
+- all
+- none
+- proves
+- guarantees
+- exactly
+- must
+
+Do not treat evidence about a related topic as support for
+a stronger claim.
 
 Question:
 {question}
@@ -83,12 +110,18 @@ Label:
         if normalized.startswith("SUPPORTED"):
             label = "SUPPORTED"
 
-        elif normalized.startswith("SUFFICIENT"):
-            label = "SUPPORTED"
+        elif normalized.startswith("CONTRADICTED"):
+            label = "CONTRADICTED"
 
         elif normalized.startswith("INSUFFICIENT"):
             label = "INSUFFICIENT"
+
+        elif normalized.startswith("SUFFICIENT"):
+            # FLAN-T5 sometimes uses SUFFICIENT instead of SUPPORTED.
+            label = "SUPPORTED"
+
         else:
+            # Fail closed.
             label = "INSUFFICIENT"
 
         return {
