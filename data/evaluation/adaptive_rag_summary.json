@@ -1,0 +1,181 @@
+{
+  "experiment": "RAG-X Adaptive RAG Evaluation",
+  "dataset": {
+    "total": 60,
+    "answerable": 45,
+    "unanswerable": 15
+  },
+  "outcomes": {
+    "supported_answerable": 43,
+    "missed_answerable": 2,
+    "correct_abstentions": 9,
+    "false_supports": 6
+  },
+  "rates": {
+    "answerable_support_rate": 0.956,
+    "answerable_miss_rate": 0.044,
+    "unanswerable_abstention_rate": 0.6,
+    "false_support_rate": 0.4,
+    "overall_correct_rate": 0.867
+  },
+  "efficiency": {
+    "average_selected_evidence_depth": 3.067,
+    "average_final_candidate_depth": 25.5,
+    "average_retrieval_rounds": 1.183,
+    "average_evidence_rounds": 2.467,
+    "solved_at_candidate_20": 43,
+    "retrieval_expansions": 11,
+    "retrieval_expansion_rate": 0.183
+  },
+  "evidence_depth_distribution": {
+    "1": 42,
+    "3": 4,
+    "5": 2,
+    "10": 12
+  },
+  "candidate_depth_distribution": {
+    "20": 49,
+    "50": 11
+  },
+  "outcome_distribution": {
+    "CORRECT_ABSTENTION": 9,
+    "FALSE_SUPPORT": 6,
+    "MISSED_ANSWERABLE": 2,
+    "SUPPORTED_ANSWERABLE": 43
+  },
+  "failure_distribution": {
+    "evidence_sufficiency_failure": 2,
+    "none": 43
+  },
+  "retrieval_reachability": {
+    "answerable_relevant_reached_at_candidate_20": 43,
+    "answerable_relevant_reached_at_candidate_50": 2,
+    "answerable_total": 45,
+    "reachability_rate_at_20": 0.956,
+    "reachability_rate_at_50": 0.044
+  },
+  "reranking_reachability": {
+    "answerable_relevant_in_reranked_top_10_at_20": 40,
+    "answerable_relevant_in_reranked_top_10_at_50": 2,
+    "answerable_total": 45,
+    "top_10_rate_at_20": 0.889,
+    "top_10_rate_at_50": 0.044
+  },
+  "final_reranked_hit_metrics": {
+    "hit_at_1": {
+      "hits": 25,
+      "total": 45,
+      "rate": 0.556
+    },
+    "hit_at_3": {
+      "hits": 36,
+      "total": 45,
+      "rate": 0.8
+    },
+    "hit_at_5": {
+      "hits": 39,
+      "total": 45,
+      "rate": 0.867
+    },
+    "hit_at_10": {
+      "hits": 40,
+      "total": 45,
+      "rate": 0.889
+    },
+    "hit_at_20": {
+      "hits": 43,
+      "total": 45,
+      "rate": 0.956
+    },
+    "hit_at_50": {
+      "hits": 43,
+      "total": 45,
+      "rate": 0.956
+    }
+  },
+  "difficulty_summary": {
+    "ambiguous_unsupported": {
+      "total": 5,
+      "supported_answerable": 0,
+      "missed_answerable": 0,
+      "correct_abstention": 0,
+      "false_support": 5,
+      "support_rate": 0.0,
+      "average_evidence_depth": 1.8,
+      "average_candidate_depth": 20
+    },
+    "depth_sensitive": {
+      "total": 5,
+      "supported_answerable": 4,
+      "missed_answerable": 1,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "support_rate": 0.8,
+      "average_evidence_depth": 2.8,
+      "average_candidate_depth": 26
+    },
+    "easy": {
+      "total": 15,
+      "supported_answerable": 15,
+      "missed_answerable": 0,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "support_rate": 1.0,
+      "average_evidence_depth": 1.267,
+      "average_candidate_depth": 20
+    },
+    "multi_chunk": {
+      "total": 10,
+      "supported_answerable": 9,
+      "missed_answerable": 1,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "support_rate": 0.9,
+      "average_evidence_depth": 1.9,
+      "average_candidate_depth": 23
+    },
+    "out_of_corpus": {
+      "total": 10,
+      "supported_answerable": 0,
+      "missed_answerable": 0,
+      "correct_abstention": 9,
+      "false_support": 1,
+      "support_rate": 0.0,
+      "average_evidence_depth": 9.5,
+      "average_candidate_depth": 47
+    },
+    "ranking_challenging": {
+      "total": 5,
+      "supported_answerable": 5,
+      "missed_answerable": 0,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "support_rate": 1.0,
+      "average_evidence_depth": 1,
+      "average_candidate_depth": 20
+    },
+    "reasoning": {
+      "total": 10,
+      "supported_answerable": 10,
+      "missed_answerable": 0,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "support_rate": 1.0,
+      "average_evidence_depth": 2.3,
+      "average_candidate_depth": 20
+    }
+  },
+  "dataset_answerability_counts": {
+    "answerable": 45,
+    "unanswerable": 15
+  },
+  "dataset_difficulty_counts": {
+    "easy": 15,
+    "depth_sensitive": 5,
+    "ranking_challenging": 5,
+    "multi_chunk": 10,
+    "reasoning": 10,
+    "out_of_corpus": 10,
+    "ambiguous_unsupported": 5
+  }
+}
