@@ -1,0 +1,93 @@
+{
+  "experiment": "fixed_top20",
+  "description": "Fixed candidate depth 20 with fixed evidence depth 10",
+  "dataset": {
+    "total": 60,
+    "answerable": 45,
+    "unanswerable": 15
+  },
+  "configuration": {
+    "candidate_depth": 20,
+    "evidence_depth": 10,
+    "retrieval_expansion": false,
+    "adaptive_evidence": false
+  },
+  "outcomes": {
+    "supported_answerable": 17,
+    "missed_answerable": 28,
+    "correct_abstentions": 15,
+    "false_supports": 0
+  },
+  "rates": {
+    "answerable_support_rate": 37.78,
+    "unanswerable_abstention_rate": 100.0,
+    "false_support_rate": 0.0,
+    "overall_correct_rate": 53.33
+  },
+  "retrieval_reachability": {
+    "relevant_evidence_reached_at_candidate_20": 43,
+    "total_answerable": 45,
+    "reachability_rate": 95.56
+  },
+  "reranking_reachability": {
+    "relevant_evidence_in_reranked_top10": 40,
+    "total_answerable": 45,
+    "reachability_rate": 88.89
+  },
+  "failure_distribution": {
+    "none": 32,
+    "evidence_support_failure": 26,
+    "retrieval_or_ranking_failure": 2
+  },
+  "difficulty": {
+    "easy": {
+      "total": 15,
+      "supported": 5,
+      "correct_abstention": 0,
+      "missed": 10,
+      "false_support": 0
+    },
+    "depth_sensitive": {
+      "total": 5,
+      "supported": 0,
+      "correct_abstention": 0,
+      "missed": 5,
+      "false_support": 0
+    },
+    "ranking_challenging": {
+      "total": 5,
+      "supported": 4,
+      "correct_abstention": 0,
+      "missed": 1,
+      "false_support": 0
+    },
+    "multi_chunk": {
+      "total": 10,
+      "supported": 3,
+      "correct_abstention": 0,
+      "missed": 7,
+      "false_support": 0
+    },
+    "reasoning": {
+      "total": 10,
+      "supported": 5,
+      "correct_abstention": 0,
+      "missed": 5,
+      "false_support": 0
+    },
+    "out_of_corpus": {
+      "total": 10,
+      "supported": 0,
+      "correct_abstention": 10,
+      "missed": 0,
+      "false_support": 0
+    },
+    "ambiguous_unsupported": {
+      "total": 5,
+      "supported": 0,
+      "correct_abstention": 5,
+      "missed": 0,
+      "false_support": 0
+    }
+  }
+}

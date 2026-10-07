@@ -1,0 +1,107 @@
+{
+  "experiment": "fixed_top10_baseline",
+  "configuration": {
+    "retrieval": "HybridRetriever",
+    "candidate_depth": 10,
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "evidence_depth": 10,
+    "evidence_judge": "evaluation.evidence_support_v2.EvidenceSupportJudgeV2",
+    "evidence_judge_model": "google/flan-t5-base",
+    "adaptive_retrieval": false,
+    "adaptive_evidence_selection": false
+  },
+  "dataset": {
+    "total": 60,
+    "answerable": 45,
+    "unanswerable": 15
+  },
+  "outcomes": {
+    "supported_answerable": 20,
+    "missed_answerable": 25,
+    "correct_abstentions": 12,
+    "false_supports": 3
+  },
+  "rates": {
+    "answerable_support_rate": 0.4444,
+    "unanswerable_abstention_rate": 0.8,
+    "false_support_rate": 0.2,
+    "overall_correct_rate": 0.5333
+  },
+  "efficiency": {
+    "fixed_candidate_depth": 10,
+    "fixed_evidence_depth": 10,
+    "average_candidate_depth": 10,
+    "average_evidence_depth": 10,
+    "retrieval_rounds": 1,
+    "retrieval_expansions": 0
+  },
+  "retrieval_reachability": {
+    "answerable_relevant_evidence_reached": 39,
+    "answerable_total": 45,
+    "rate": 0.8667
+  },
+  "failure_distribution": {
+    "none": 32,
+    "retrieval_or_ranking_failure": 6,
+    "evidence_support_failure": 19,
+    "unsupported_acceptance": 3
+  },
+  "difficulty_summary": {
+    "easy": {
+      "total": 15,
+      "supported": 4,
+      "missed": 11,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "accuracy": 0.2667
+    },
+    "depth_sensitive": {
+      "total": 5,
+      "supported": 1,
+      "missed": 4,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "accuracy": 0.2
+    },
+    "ranking_challenging": {
+      "total": 5,
+      "supported": 3,
+      "missed": 2,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "accuracy": 0.6
+    },
+    "multi_chunk": {
+      "total": 10,
+      "supported": 7,
+      "missed": 3,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "accuracy": 0.7
+    },
+    "reasoning": {
+      "total": 10,
+      "supported": 5,
+      "missed": 5,
+      "correct_abstention": 0,
+      "false_support": 0,
+      "accuracy": 0.5
+    },
+    "out_of_corpus": {
+      "total": 10,
+      "supported": 0,
+      "missed": 0,
+      "correct_abstention": 10,
+      "false_support": 0,
+      "accuracy": 1.0
+    },
+    "ambiguous_unsupported": {
+      "total": 5,
+      "supported": 0,
+      "missed": 0,
+      "correct_abstention": 2,
+      "false_support": 3,
+      "accuracy": 0.4
+    }
+  }
+}
