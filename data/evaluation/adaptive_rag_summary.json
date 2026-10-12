@@ -6,60 +6,58 @@
     "unanswerable": 15
   },
   "outcomes": {
-    "supported_answerable": 43,
-    "missed_answerable": 2,
-    "correct_abstentions": 9,
-    "false_supports": 6
+    "supported_answerable": 2,
+    "missed_answerable": 43,
+    "correct_abstentions": 15,
+    "false_supports": 0
   },
   "rates": {
-    "answerable_support_rate": 0.956,
-    "answerable_miss_rate": 0.044,
-    "unanswerable_abstention_rate": 0.6,
-    "false_support_rate": 0.4,
-    "overall_correct_rate": 0.867
+    "answerable_support_rate": 0.044,
+    "answerable_miss_rate": 0.956,
+    "unanswerable_abstention_rate": 1.0,
+    "false_support_rate": 0.0,
+    "overall_correct_rate": 0.283
   },
   "efficiency": {
-    "average_selected_evidence_depth": 3.067,
-    "average_final_candidate_depth": 25.5,
-    "average_retrieval_rounds": 1.183,
-    "average_evidence_rounds": 2.467,
-    "solved_at_candidate_20": 43,
-    "retrieval_expansions": 11,
-    "retrieval_expansion_rate": 0.183
+    "average_selected_evidence_depth": 9.75,
+    "average_final_candidate_depth": 49,
+    "average_retrieval_rounds": 1.967,
+    "average_evidence_rounds": 7.817,
+    "solved_at_candidate_20": 2,
+    "retrieval_expansions": 58,
+    "retrieval_expansion_rate": 0.967
   },
   "evidence_depth_distribution": {
-    "1": 42,
-    "3": 4,
-    "5": 2,
-    "10": 12
+    "5": 3,
+    "10": 57
   },
   "candidate_depth_distribution": {
-    "20": 49,
-    "50": 11
+    "20": 2,
+    "50": 58
   },
   "outcome_distribution": {
-    "CORRECT_ABSTENTION": 9,
-    "FALSE_SUPPORT": 6,
-    "MISSED_ANSWERABLE": 2,
-    "SUPPORTED_ANSWERABLE": 43
+    "CORRECT_ABSTENTION": 15,
+    "MISSED_ANSWERABLE": 43,
+    "SUPPORTED_ANSWERABLE": 2
   },
   "failure_distribution": {
-    "evidence_sufficiency_failure": 2,
-    "none": 43
+    "evidence_sufficiency_failure": 40,
+    "none": 2,
+    "ranking_depth_failure": 3
   },
   "retrieval_reachability": {
     "answerable_relevant_reached_at_candidate_20": 43,
-    "answerable_relevant_reached_at_candidate_50": 2,
+    "answerable_relevant_reached_at_candidate_50": 43,
     "answerable_total": 45,
     "reachability_rate_at_20": 0.956,
-    "reachability_rate_at_50": 0.044
+    "reachability_rate_at_50": 0.956
   },
   "reranking_reachability": {
     "answerable_relevant_in_reranked_top_10_at_20": 40,
-    "answerable_relevant_in_reranked_top_10_at_50": 2,
+    "answerable_relevant_in_reranked_top_10_at_50": 40,
     "answerable_total": 45,
     "top_10_rate_at_20": 0.889,
-    "top_10_rate_at_50": 0.044
+    "top_10_rate_at_50": 0.889
   },
   "final_reranked_hit_metrics": {
     "hit_at_1": {
@@ -78,19 +76,19 @@
       "rate": 0.867
     },
     "hit_at_10": {
-      "hits": 40,
+      "hits": 42,
       "total": 45,
-      "rate": 0.889
+      "rate": 0.933
     },
     "hit_at_20": {
-      "hits": 43,
+      "hits": 42,
       "total": 45,
-      "rate": 0.956
+      "rate": 0.933
     },
     "hit_at_50": {
-      "hits": 43,
+      "hits": 45,
       "total": 45,
-      "rate": 0.956
+      "rate": 1.0
     }
   },
   "difficulty_summary": {
@@ -98,71 +96,71 @@
       "total": 5,
       "supported_answerable": 0,
       "missed_answerable": 0,
-      "correct_abstention": 0,
-      "false_support": 5,
+      "correct_abstention": 5,
+      "false_support": 0,
       "support_rate": 0.0,
-      "average_evidence_depth": 1.8,
-      "average_candidate_depth": 20
+      "average_evidence_depth": 9,
+      "average_candidate_depth": 50
     },
     "depth_sensitive": {
       "total": 5,
-      "supported_answerable": 4,
-      "missed_answerable": 1,
+      "supported_answerable": 0,
+      "missed_answerable": 5,
       "correct_abstention": 0,
       "false_support": 0,
-      "support_rate": 0.8,
-      "average_evidence_depth": 2.8,
-      "average_candidate_depth": 26
+      "support_rate": 0.0,
+      "average_evidence_depth": 10,
+      "average_candidate_depth": 50
     },
     "easy": {
       "total": 15,
-      "supported_answerable": 15,
-      "missed_answerable": 0,
+      "supported_answerable": 0,
+      "missed_answerable": 15,
       "correct_abstention": 0,
       "false_support": 0,
-      "support_rate": 1.0,
-      "average_evidence_depth": 1.267,
-      "average_candidate_depth": 20
+      "support_rate": 0.0,
+      "average_evidence_depth": 10,
+      "average_candidate_depth": 50
     },
     "multi_chunk": {
       "total": 10,
-      "supported_answerable": 9,
-      "missed_answerable": 1,
+      "supported_answerable": 0,
+      "missed_answerable": 10,
       "correct_abstention": 0,
       "false_support": 0,
-      "support_rate": 0.9,
-      "average_evidence_depth": 1.9,
-      "average_candidate_depth": 23
+      "support_rate": 0.0,
+      "average_evidence_depth": 10,
+      "average_candidate_depth": 50
     },
     "out_of_corpus": {
       "total": 10,
       "supported_answerable": 0,
       "missed_answerable": 0,
-      "correct_abstention": 9,
-      "false_support": 1,
+      "correct_abstention": 10,
+      "false_support": 0,
       "support_rate": 0.0,
-      "average_evidence_depth": 9.5,
-      "average_candidate_depth": 47
+      "average_evidence_depth": 10,
+      "average_candidate_depth": 50
     },
     "ranking_challenging": {
       "total": 5,
-      "supported_answerable": 5,
-      "missed_answerable": 0,
+      "supported_answerable": 1,
+      "missed_answerable": 4,
       "correct_abstention": 0,
       "false_support": 0,
-      "support_rate": 1.0,
-      "average_evidence_depth": 1,
-      "average_candidate_depth": 20
+      "support_rate": 0.2,
+      "average_evidence_depth": 9,
+      "average_candidate_depth": 44
     },
     "reasoning": {
       "total": 10,
-      "supported_answerable": 10,
-      "missed_answerable": 0,
+      "supported_answerable": 1,
+      "missed_answerable": 9,
       "correct_abstention": 0,
       "false_support": 0,
-      "support_rate": 1.0,
-      "average_evidence_depth": 2.3,
-      "average_candidate_depth": 20
+      "support_rate": 0.1,
+      "average_evidence_depth": 9.5,
+      "average_candidate_depth": 47
     }
   },
   "dataset_answerability_counts": {
